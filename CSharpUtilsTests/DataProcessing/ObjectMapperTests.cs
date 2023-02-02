@@ -1,11 +1,12 @@
 using CSharpUtils.DataProcessing;
 
-namespace CSharpUtilsTests
+namespace CSharpUtilsTests.DataProcessing
 {
+    [Parallelizable(ParallelScope.All)]
     public class ObjectMapperTests
     {
 
-        [Test, Order(1)]
+        [Test]
         public void RegisterMap()
         {
             try
@@ -24,7 +25,7 @@ namespace CSharpUtilsTests
             }
         }
 
-        [Test, Order(2)]
+        [Test]
         public void PerformanceTest()
         {
             try
@@ -52,7 +53,7 @@ namespace CSharpUtilsTests
                     endTime = DateTime.Now;
 
                     // generate timing and to microseconds
-                    timings[i] = (endTime - startTime).TotalMilliseconds * 1000; 
+                    timings[i] = (endTime - startTime).TotalMilliseconds * 1000;
                 }
 
                 double averageTime = timings.Average();

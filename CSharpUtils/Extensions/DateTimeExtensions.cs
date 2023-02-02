@@ -1,15 +1,12 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharpUtils.Extension
+﻿namespace CSharpUtils.Extensions
 {
     public static class DateTimeExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
         public static string GetDaySuffix(this DateTime dateTime)
         {
             switch (dateTime.Day)
@@ -29,6 +26,13 @@ namespace CSharpUtils.Extension
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="toLowerCase"></param>
+        /// <param name="maxLength"></param>
+        /// <returns></returns>
         public static string GetDayOfWeekAsText(this DateTime dateTime, bool toLowerCase = false, int maxLength = 0)
         {
             string value;
@@ -40,11 +44,11 @@ namespace CSharpUtils.Extension
                     break;
 
                 case DayOfWeek.Tuesday:
-                    value = = "Tuesday";
+                    value = "Tuesday";
                     break;
 
                 case DayOfWeek.Wednesday:
-                    value = = "Wednesday";
+                    value = "Wednesday";
                     break;
 
                 case DayOfWeek.Thursday:
@@ -77,6 +81,13 @@ namespace CSharpUtils.Extension
             return value;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <param name="toLowerCase"></param>
+        /// <param name="maxLength"></param>
+        /// <returns></returns>
         public static string GetMonthAsText(this DateTime dateTime, bool toLowerCase = false, int maxLength = 0)
         {
             string value;
